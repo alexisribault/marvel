@@ -8,7 +8,7 @@
                     </button>
                 </column>
                 <column sm="12" md="8" lg="9">
-                    <h2 style="text-align: right; margin: 5px">{{ comic.title }}</h2>
+                    <h2 class="single-title-section_title">{{ comic.title }}</h2>
                 </column>
             </row>
         </container>
@@ -19,10 +19,10 @@
                 <img width="100%" class="comic_img" src="{{ comic.thumbnail.path }}.{{ comic.thumbnail.extension }}">
             </column>
             <column sm="12" md="8" lg="8">
-                <!--<div *ngIf="comic.description">-->
-                    <!--<p><strong>Description</strong></p>-->
-                    <!--<p [innerHtml]="comic.description"></p>-->
-                <!--</div>-->
+                <div *ngIf="comic.description">
+                    <p><strong>Description</strong></p>
+                    <p [innerHtml]="comic.description"></p>
+                </div>
                 <div *ngIf="comic.characters.available">
                     <p><strong>Characters ({{ comic.characters.available }})</strong></p>
                     <ul>

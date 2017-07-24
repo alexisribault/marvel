@@ -15,12 +15,10 @@ export class ComicSingleComponent implements OnInit {
     }
 
     ngOnInit() {
-        // Subscribe to route params
         this.sub = this.route.params.subscribe(params => {
 
             const id = params['id'];
 
-            // Retrieve Pet with Id route param
             this.comicService.getComicById(id).subscribe(data => this.comic = data.data.results[0]);
         });
     }

@@ -1,17 +1,13 @@
-
-// Import component decorator
-import { Component, OnInit } from '@angular/core';
-import { CharacterService } from '../../character.service';
-import { Observable } from 'rxjs/Observable';
-import { ActivatedRoute } from '@angular/router';
-
+import {Component, OnInit} from '@angular/core';
+import {CharacterService} from '../../character.service';
+import {Observable} from 'rxjs/Observable';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
     templateUrl: './character-single.component.html',
     providers: [CharacterService]
 })
 
-// Component class
 export class CharacterSingleComponent implements OnInit {
     private sub: any;
     private character: string[];
@@ -20,7 +16,6 @@ export class CharacterSingleComponent implements OnInit {
     }
 
     ngOnInit() {
-        // Subscribe to route params
         this.sub = this.route.params.subscribe(params => {
 
             const id = params['id'];
