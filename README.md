@@ -5,6 +5,9 @@ If you need to build project:
 1. then got to: [Marvel Account](https://developer.marvel.com/account) copy the public key given on that page and replace it with the existing public key one the `environment.prod.ts` file 
 2. set the domain name with your domain in the same page: [Marvel Account](https://developer.marvel.com/account).
 
+## Install dependencies
+run `npm install` to install all the dependencies.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
