@@ -1,7 +1,9 @@
 # Marvel
 
 This project is using Marvel API, the key is already set in the application and will allow the user to test the application locally.
-If you need to build project, then got to: [Marvel Account](https://developer.marvel.com/account) replace the key to the `environment.prod.ts` file and set the domain name with your domain.
+If you need to build project:
+1. then got to: [Marvel Account](https://developer.marvel.com/account) copy the public key given on that page and replace it with the existing public key one the `environment.prod.ts` file 
+2. set the domain name with your domain in the same page: [Marvel Account](https://developer.marvel.com/account).
 
 ## Development server
 
