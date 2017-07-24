@@ -1,0 +1,25 @@
+<div class="theme-background">
+    <container>
+        <h2 class="title">Comics</h2>
+        <br>
+        <!--<p>-->
+            <!--<md-input-container class="md-block">-->
+                <!--<input mdInput placeholder="Search">-->
+            <!--</md-input-container>-->
+        <!--</p>-->
+    </container>
+</div>
+<container>
+    <row *ngFor="let obj of comics" class="article">
+        <column sm="12" md="4" lg="3">
+            <img width="50%" class="comic_img" src="{{ obj.thumbnail.path }}.{{ obj.thumbnail.extension }}">
+        </column>
+        <column sm="12" md="8" lg="9">
+            <h3><a [routerLink]="['/comic', obj.id]">{{ obj.title }}</a></h3>
+            <p>{{ obj.description }}</p>
+            <p *ngIf="obj.prices[0].price">${{ obj.prices[0].price }}</p>
+            <p *ngIf="!obj.prices[0].price">Free</p>
+            <p></p>
+        </column>
+    </row>
+</container>

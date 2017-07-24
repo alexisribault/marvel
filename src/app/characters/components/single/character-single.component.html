@@ -1,0 +1,70 @@
+<div *ngIf="character">
+
+    <div class="theme-background section-padding">
+        <container class="single-title-section">
+            <row>
+                <column sm="12" md="4" lg="3">
+                    <button md-raised-button color="primary" [routerLink]="['/characters']">
+                        <md-icon>keyboard_arrow_left</md-icon> Back To Characters
+                    </button>
+                </column>
+                <column sm="12" md="8" lg="9">
+                    <h2 style="text-align: right; margin: 5px">{{ character.name }}</h2>
+                </column>
+            </row>
+        </container>
+    </div>
+    <container class="section-padding">
+        <row>
+            <column sm="12" md="4" lg="4">
+                <img width="100%" class="character_img" src="{{ character.thumbnail.path }}.{{ character.thumbnail.extension }}">
+            </column>
+            <column sm="12" md="8" lg="8">
+                <div *ngIf="character.description">
+                    <p><strong>Description</strong></p>
+                    <p [innerHtml]="character.description"></p>
+                </div>
+                <div *ngIf="character.comics.available">
+                    <p><strong>Comics where {{ character.name }} appeared ({{ character.comics.available }})</strong></p>
+                    <ul>
+                        <li *ngFor="let characterComic of character.comics.items">
+                            {{ characterComic.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="character.series.available">
+                    <p><strong>Series where {{ character.name }} appeared ({{ character.series.available }})</strong></p>
+                    <ul>
+                        <li *ngFor="let characterSeries of character.series.items">
+                            {{ characterSeries.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="character.stories.available">
+                    <p><strong>Stories where {{ character.name }} appeared ({{ character.stories.available }})</strong></p>
+                    <ul>
+                        <li *ngFor="let characterStories of character.stories.items">
+                            {{ characterStories.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="character.events.available">
+                    <p><strong>Events where {{ character.name }} appeared ({{ character.events.available }})</strong></p>
+                    <ul>
+                        <li *ngFor="let characterEvents of character.events.items">
+                            {{ characterEvents.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="character.urls">
+                    <p><strong>Urls where {{ character.name }} appeared</strong></p>
+                    <ul>
+                        <li *ngFor="let characterUrls of character.urls">
+                            <a target="a_blank" href="{{ characterUrls.url }}">{{ characterUrls.type }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </column>
+        </row>
+    </container>
+</div>

@@ -1,0 +1,16 @@
+<div class="theme-background">
+    <container>
+        <h2 class="title">Characters</h2>
+        <br>
+    </container>
+</div>
+<container>
+    <row *ngFor="let obj of characters" class="article">
+        <column sm="6" md="4" lg="4">
+            <img width="50%" class="comic-img" src="{{ obj.thumbnail.path }}.{{ obj.thumbnail.extension }}">
+        </column>
+        <column sm="6" md="4" lg="3">
+            <h3><a [routerLink]="['/character', obj.id]">{{ obj.name }}</a></h3>
+        </column>
+    </row>
+</container>

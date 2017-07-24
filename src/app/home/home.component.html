@@ -1,0 +1,20 @@
+<div class="theme-background">
+    <container>
+        <h2 class="title text-center">Welcome to Marvel Third Party Website</h2>
+        <p class="text-center">Please choose where you want to go</p>
+        <br>
+        <row>
+            <column xs="6" sm="6" md="3" lg="3" mdOffset="3" lgOffset="3">
+                <a class="button-block" md-raised-button color="primary" [routerLink]="['/comics']">
+                    Comics
+                </a>
+            </column>
+            <column xs="6" sm="6" md="3" lg="3">
+                <a class="button-block" md-raised-button color="primary" [routerLink]="['/characters']">
+                    Characters
+                </a>
+            </column>
+        </row>
+        <img width="100%" src="/assets/marvel-logo.jpeg">
+    </container>
+</div>

@@ -1,0 +1,33 @@
+<bootstrap-grid>
+
+  <md-menu x-position="before" #menu="mdMenu">
+    <button [routerLink]="['/']" md-menu-item>Home</button>
+    <button [routerLink]="['/comics']" md-menu-item>Comics</button>
+    <button [routerLink]="['/characters']" md-menu-item>Characters</button>
+  </md-menu>
+
+  <md-toolbar color="primary">
+
+    <h1><a [routerLink]="['/']">{{title}}</a></h1>
+
+    <section class="menu hidden-sm">
+      <a [routerLink]="['/']" >Home</a>
+      <a [routerLink]="['/comics']" >Comics</a>
+      <a [routerLink]="['/characters']" >Characters</a>
+    </section>
+
+    <button md-icon-button [md-menu-trigger-for]="menu" class="hidden-md">
+      <md-icon>more_vert</md-icon>
+    </button>
+
+  </md-toolbar>
+
+  <router-outlet></router-outlet>
+
+  <footer style="background-color: #000;">
+    <container>
+      <p><a href="http://marvel.com">Data provided by Marvel. © 2017 MARVEL</a></p>
+    </container>
+  </footer>
+
+</bootstrap-grid>
